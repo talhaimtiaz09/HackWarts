@@ -1,7 +1,11 @@
-let faqExpand = document.querySelector('.plus')
-let answer = document.querySelector('.answers')
+let faqExpand = document.querySelectorAll('.expand')
+let answer = document.querySelectorAll('.answers')
+let questions = document.querySelectorAll('.ques')
 
-faqExpand.addEventListener('click',() => {
-answer.classList.toggle('hidden')
-
+faqExpand.forEach((element,index) => {
+    element.addEventListener('click',() => {
+        questions[index].classList.toggle('overflow-hidden')
+        answer[index].classList.toggle('translate-y-12')
+        answer[index].classList.replace('-z-10','z-10')
+    }) 
 })
