@@ -38,33 +38,21 @@
             <th>Category</th>
           </tr>
           <!-- table entery -->
-          <tr>
-            <td>Talha</td>
-            <td><a href="">example.pdf</a></td>
-            <td>CS101</td>
-            <td>Assignment</td>
-            <td>
-              <img src="./icons/tickIcon.svg" alt="" />
-            </td>
+          <% for(let i = 0; i < contributions.length; i++){ %>
+            <tr>
+              <td>Talha</td>
+              <td><a href="">example.pdf</a></td>
+              <td><%= contributions[i].course %></td>
+              <td><%= contributions[i].category %></td>
+              <td>
+                <img src="./icons/tickIcon.svg" alt="" />
+              </td>
 
-            <td>
-              <img src="./icons/trashIcon.svg" alt="" />
-            </td>
-          </tr>
-          <!-- table entery -->
-          <tr>
-            <td>Talha</td>
-            <td><a href="">example.pdf</a></td>
-            <td>CS101</td>
-            <td>Assignment</td>
-            <td>
-              <img src="./icons/tickIcon.svg" alt="" />
-            </td>
-
-            <td>
-              <img src="./icons/trashIcon.svg" alt="" />
-            </td>
-          </tr>
+              <td>
+                <img src="./icons/trashIcon.svg" alt="" />
+              </td>
+            </tr>
+          <% } %>
         </table>
         <!-- Add new course  -->
         <div
@@ -74,27 +62,6 @@
             Add New Course
           </h2>
           <form action="/addCourse" method="post">
-            <h3 class="text-slate-600 font-semibold">Course Title :</h3>
-            <input
-              class="py-1 px-2"
-              type="text"
-              name="courseTitle"
-              id=""
-              placeholder="Course title"
-            />
-            <h3 class="text-slate-600 font-semibold">Course Code :</h3>
-            <input
-              class="px-2 py-1"
-              type="text"
-              name="courseCode"
-              id=""
-              placeholder="Course Code"
-            />
-            <button
-              class="block mx-auto my-4 px-4 py-1 active:border-teal-600 active:drop-shadow-none drop-shadow-lg bg-white text-teal-500 border-2 border-teal-500"
-            >
-              Submit
-            </button>
               <h3 class="text-slate-600 font-semibold">Course Title :</h3>
               <input class="py-1 px-2" type="text" name="courseTitle" id="" placeholder="Course title">
               <h3 class=" text-slate-600 font-semibold">Course Code :</h3>
