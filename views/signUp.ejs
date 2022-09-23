@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/css/output.css" />
+  </head>
+  <body class="bg-teal-100">
+      <img class="absolute -z-10 w-full h-screen" src="/icons/bg-abstract-lines.svg" alt="lines-vector">
+    <!-- Sign Up box -->
+    <div
+      class="bg-white rounded-2xl py-16 px-10 w-96 shadow-xl sm:ml-auto my-36 mx-20"
+    >
+      <h1 class="font-bold text-2xl text-center py-2 mt-4">Sign Up</h1>
+      <p class="text-center mb-12">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, soluta.
+      </p>
+      <% if(typeof errors != 'undefined') { %>
+        <% errors.forEach(function(error) { %> 
+            <%= error.msg %>
+        <% }) %>
+      <% } %>
+      <form action="/users/signingUp" method="post">
+      <input
+        class="text-center w-full py-3 my-2 text-lg bg-slate-100 rounded-md shadow-md"
+        type="text"
+        name="userName"
+        id="Username"
+        placeholder="Username"
+        value="<%= typeof name != 'undefined' ? name : '' %>"
+      />
+      <input
+      class="text-center w-full py-3 my-2 text-lg bg-slate-100 rounded-md shadow-md"
+      type="text"
+      name="email"
+      id="Email"
+      placeholder="Email"
+      value="<%= typeof email != 'undefined' ? email : '' %>"
+      />
+      <input
+        class="text-center w-full py-3 my-2 text-lg bg-slate-100 rounded-md shadow-md"
+        type="password"
+        name="password"
+        id="Password"
+        placeholder="Password"
+        value="<%= typeof email != 'undefined' ? password : '' %>"
+        />
+        <input
+        class="text-center w-full py-3 my-2 text-lg bg-slate-100 rounded-md shadow-md"
+        type="password"
+        name="password2"
+        id="Password2"
+        placeholder="Confirm Password"
+        value="<%= typeof email != 'undefined' ? password2 : '' %>"
+        />
+        <span class="text-center font-semibold text-gray-500 block py-4 mb-6"
+        >Forgot Password?</span>
+        <button
+          class="block bg-teal-400 text-white font-semibold text-lg w-full py-3 my-4 rounded-lg shadow-md">
+          Sign Up
+        </button>
+    </form>
+      <!-- horizontal line stroke effect  -->
+      <div class="flex items-center justify-center">
+        <hr
+          class="bg-gradient-to-l from-teal-500 to-transparent h-[4px] w-1/5 border-none"
+        />
+        <span class="px-2">Or Sign Up with</span>
+        <hr
+          class="bg-gradient-to-r from-teal-500 to-transparent h-[4px] w-1/5 border-none"
+        />
+      </div>
+      <button
+        class="flex items-center justify-start bg-teal-400 px-4 py-2 my-4 rounded-lg w-full shadow-md"
+      >
+        <img
+          class="border-4 border-white bg-white rounded-full"
+          src="/icons/GoogleLogo.svg"
+          alt="Google-logo-icon"
+        />
+        <span class="text-white font-semibold text-lg mx-auto"
+          >Sign Up with Google</span
+        >
+      </button>
+    </div>
+  </body>
+</html>
