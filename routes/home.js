@@ -7,5 +7,6 @@ router.get('/aboutUs', homeController.getAboutUs)
 router.get('/dashboard', homeController.getDashboard)
 // router.get('/courses', homeController.getCourses)
 router.post('/addCourse', homeController.createCourse)
+router.get('/signingOut', homeController.signingOut)
 
 module.exports = router

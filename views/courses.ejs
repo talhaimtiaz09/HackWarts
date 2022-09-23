@@ -40,7 +40,7 @@
     <div><img class="inline-block" src="./icons/folder-icon.svg" alt="folder">CS101 -  Introduction to Programming</div>
     <hr class="w-full h-1"> -->
     <% for(let i = 0; i < courses.length; i++){ %>
-        <div><a href="courses/courseContent"><img class="inline-block" src="./icons/folder-icon.svg" alt="folder"><%= courses[i].courseCode %> -  <%= courses[i].courseTitle %></a></div>
+        <div><a href="courses/<%=courses[i]._id%>/courseContent"><img class="inline-block" src="./icons/folder-icon.svg" alt="folder"><%= courses[i].courseCode %> -  <%= courses[i].courseTitle %></a></div>
         <hr class="w-full h-1">
     <% } %>
    </div> 
