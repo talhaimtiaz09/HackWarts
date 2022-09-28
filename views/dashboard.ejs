@@ -40,8 +40,8 @@
           <!-- table entery -->
           <% for(let i = 0; i < contributions.length; i++){ %>
             <tr>
-              <td>Talha</td>
-              <td><a href="">example.pdf</a></td>
+              <td><%= contributions[i].name %></td>
+              <td><a href="<%= contributions[i].pdf %>"><%= contributions[i].filename %></a></td>
               <td><%= contributions[i].course %></td>
               <td><%= contributions[i].category %></td>
               <td>

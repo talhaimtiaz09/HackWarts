@@ -1,6 +1,8 @@
 const Courses = require('../models/courses')
 const Contribution = require('../models/contributions')
 const passport = require('passport')
+const Users = require('../models/users')
+const cloudinary = require('../middleware/cloudinary')
 
 module.exports = {
     getIndex: (req, res) => {
@@ -37,10 +39,19 @@ module.exports = {
         res.render('contribute.ejs')
     },
     contributing: async (req, res) => {
+        // console.log(req.body)
+        console.log(req.file.path)
+        console.log(req.user)
         try{
+
+            const result = await cloudinary.uploader.upload(req.file.path)
             await Contribution.create({
+                name: req.user.userName,
                 course: req.body.course, 
-                category: req.body.category
+                category: req.body.category,
+                filename: req.body.filename,
+                pdf: result.secure_url,
+                cloudinaryId: result.public_id
             })
             console.log('Contribution has been added!')
             res.redirect('/')
