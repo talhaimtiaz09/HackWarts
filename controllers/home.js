@@ -35,13 +35,14 @@ module.exports = {
         //   req.user = null
         // })
     },
-    getContribute: (req, res) => {
-        res.render('contribute.ejs')
+    getContribute: async (req, res) => {
+        const coursesList = await Courses.find().lean()
+        res.render('contribute.ejs', { courses: coursesList })
     },
     contributing: async (req, res) => {
         // console.log(req.body)
-        console.log(req.file.path)
-        console.log(req.user)
+        // console.log(req.file.path)
+        // console.log(req.user)
         try{
 
             const result = await cloudinary.uploader.upload(req.file.path)

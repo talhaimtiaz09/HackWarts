@@ -21,7 +21,7 @@ module.exports = function (passport) {
           if (err) {
             return done(err);
           }
-          console.log(`Password: ${password}`)
+          // console.log(`Password: ${password}`)
           if (isMatch) {
             return done(null, user);
           }

@@ -5,8 +5,37 @@ module.exports = {
         const coursesList = await Courses.find()
         res.render('courses.ejs', {courses: coursesList})
     },
-    getCourseContent: (req, res) => {
-        res.render('courseContent.ejs')
+    getCourseContent: async (req, res) => {
+        try {
+            const course = await Courses.findById(req.params.id);
+            res.render("courseContent.ejs", { course: course });
+          } catch (err) {
+            console.log(err);
+          }
+    },
+    getAssignments: async (req, res) => {
+        try {
+          const course = await Courses.findById(req.params.id);
+          res.render("assignments.ejs", { course: course });
+        } catch (err) {
+          console.log(err);
+        }
+    },
+    getQuizzes: async (req, res) => {
+        try {
+          const course = await Courses.findById(req.params.id);
+          res.render("quizzes.ejs", { course: course });
+        } catch (err) {
+          console.log(err);
+        }
+    },
+    getMidsFinals: async (req, res) => {
+        try {
+          const course = await Courses.findById(req.params.id);
+          res.render("midsFinals.ejs", { course: course });
+        } catch (err) {
+          console.log(err);
+        }
     },
     createCourse: async (req, res) => {
         try{

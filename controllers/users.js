@@ -87,7 +87,7 @@ module.exports = {
         
         passport.authenticate('local', (err, user, info) => {
             if (err) { return next(err) }
-            console.log(info)
+            // console.log(info)
             // console.log(user)
             if (!user) {
                 req.flash('errors', info)
