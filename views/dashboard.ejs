@@ -36,6 +36,7 @@
             <th>File</th>
             <th>Course</th>
             <th>Category</th>
+            <th>Cloudinary ID</th>
           </tr>
           <!-- table entery -->
           <% for(let i = 0; i < contributions.length; i++){ %>
@@ -44,14 +45,12 @@
               <td><a href="<%= contributions[i].pdf %>"><%= contributions[i].filename %></a></td>
               <td><%= contributions[i].course %></td>
               <td><%= contributions[i].category %></td>
+              <td><%= contributions[i].cloudinaryId %></td>
               <td>
                 <img src="./icons/tickIcon.svg" alt="" />
               </td>
-
               <td>
-                <form action="" method="post">
-                  <img src="./icons/trashIcon.svg" alt="" />
-                </form>
+                  <img src="./icons/trashIcon.svg" alt="delButton" class="deleteButton"/>
               </td>
             </tr>
           <% } %>
@@ -73,5 +72,7 @@
         </div>
       </div>
     </section>
+
+    <script src="/script.js"></script>
   </body>
 </html>

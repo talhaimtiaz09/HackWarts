@@ -6,7 +6,9 @@ const cloudinary = require('../middleware/cloudinary')
 
 module.exports = {
     getIndex: (req, res) => {
-        res.render('home.ejs')
+        let loggedInUser = []
+        loggedInUser.push(req.user)
+        res.render('home.ejs', { user: loggedInUser })
     },
     getAboutUs: (req, res) => {
         res.render('aboutUs.ejs')
@@ -29,7 +31,7 @@ module.exports = {
         req.logout(() => {
           console.log('User has logged out.')
         })
-        res.redirect('/users/signIn')
+        res.redirect('/')
         // req.session.destroy((err) => {
         //   if (err) console.log('Error : Failed to destroy the session during logout.', err)
         //   req.user = null
@@ -61,4 +63,22 @@ module.exports = {
             console.log(err)
         }
     },
+    deleteContribution: async (req, res) => {
+        console.log(req.body)
+        try {
+          console.log("server")
+          await Contribution.findOneAndDelete({ cloudinaryId: req.body.cloudinID });
+          // console.log(contrib)
+          // Delete image from cloudinary
+          // await cloudinary.uploader.destroy(contrib.cloudinaryId);
+          // Delete document from db
+          // await Contribution.remove({ cloudinaryId: req.body.cloudinID });
+          
+          console.log("Deleted Contribution");
+          res.redirect("/dashboard");
+        } 
+        catch (err) {
+          res.redirect("/");
+        }
+    }
 }

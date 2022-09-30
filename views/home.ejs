@@ -48,14 +48,21 @@
       </a>
     </span>
     <ul data-ul class="md:flex-row md:top-auto md:w-auto bg-slate-50 pb-5 md:pb-px md:bg-white -top-96 text-center flex flex-col items-center w-full md:relative fixed z-20">
-          
-      <li class="li md:my-4 mx-6 transition-all duration-500 hover:text-teal-600"><a href="/dashboard">Dashboard</a></li>
+      
       <li class="li md:my-4 mx-6 transition-all duration-500 hover:text-teal-600"><a href="/">Home</a></li>
       <li class="li md:my-4 mx-6 transition-all duration-500 hover:text-teal-600"><a href="/courses">Course List</a></li>
       <li class="li md:my-4 mx-6 transition-all duration-500 hover:text-teal-600"><a href="/aboutUs">About</a></li>
-      <li class="li md:my-4 mx-6 transition-all duration-500 hover:text-teal-600"><a href="/users/signIn">Sign In</a></li>
-      <li class="li md:my-4 mx-6 transition-all duration-500 hover:text-teal-600"><a href="/users/signUp">Sign Up</a></li>
-      <li class="li md:my-4 mx-6 transition-all duration-500 hover:text-teal-600"><a href="/signingOut">Sign Out</a></li>
+      <% if(user[0] == undefined){ %>
+        <li class="li md:my-4 mx-6 transition-all duration-500 hover:text-teal-600"><a href="/users/signIn">Sign In</a></li>
+        <li class="li md:my-4 mx-6 transition-all duration-500 hover:text-teal-600"><a href="/users/signUp">Sign Up</a></li>
+      <% } %>
+      <% if(user[0] != undefined){ %>
+        <li class="li md:my-4 mx-6 transition-all duration-500 hover:text-teal-600">Hello <%= user[0].userName %></li>
+        <% if(user[0].dashboardAccess === true){ %>
+          <li class="li md:my-4 mx-6 transition-all duration-500 hover:text-teal-600"><a href="/dashboard">Dashboard</a></li>
+        <% } %>
+        <li class="li md:my-4 mx-6 transition-all duration-500 hover:text-teal-600"><a href="/signingOut">Sign Out</a></li>
+      <% } %>
     </ul>
     <img id="menuIcon" class="w-6 m-4 md:hidden z-20" src="./icons/menuIcon.svg" alt="hamburger-icon">
   </nav>
