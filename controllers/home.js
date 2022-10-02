@@ -1,5 +1,8 @@
 const Courses = require('../models/courses')
 const Contribution = require('../models/contributions')
+const Assignments = require('../models/assignments')
+const Quizzes = require('../models/quizzes')
+const MidsFinals = require('../models/midsfinals')
 const passport = require('passport')
 const Users = require('../models/users')
 const cloudinary = require('../middleware/cloudinary')
@@ -64,21 +67,84 @@ module.exports = {
         }
     },
     deleteContribution: async (req, res) => {
-        console.log(req.body)
+        // console.log(req.body)
         try {
-          console.log("server")
-          await Contribution.findOneAndDelete({ cloudinaryId: req.body.cloudinID });
-          // console.log(contrib)
-          // Delete image from cloudinary
-          // await cloudinary.uploader.destroy(contrib.cloudinaryId);
-          // Delete document from db
-          // await Contribution.remove({ cloudinaryId: req.body.cloudinID });
-          
-          console.log("Deleted Contribution");
-          res.redirect("/dashboard");
+        //   console.log("server")
+            await Contribution.findOneAndDelete({ cloudinaryId: req.body.cloudinID });
+            // console.log(contrib)
+            // Delete image from cloudinary
+            // await cloudinary.uploader.destroy(contrib.cloudinaryId);
+            // Delete document from db
+            // await Contribution.remove({ cloudinaryId: req.body.cloudinID });
+            
+            console.log("Deleted Contribution");
+            res.redirect("/dashboard");
         } 
         catch (err) {
           res.redirect("/");
         }
-    }
+    },
+    approveAssignment: async (req, res) => {
+        console.log(req.body)
+        // console.log(req.body.course)
+        try{
+            const reqCourse = await Courses.findOne({ courseCode: req.body.course }).lean()
+            // console.log(reqUser)
+            const courseID = reqCourse._id
+            // console.log(courseID)
+            await Assignments.create({
+                fileName: req.body.fileName,
+                fileLink: req.body.fileLink,
+                courseID: courseID,
+                user: req.body.contributingUser
+            })
+            console.log('Assignment has been approved!')
+            res.redirect('/')
+        } 
+        catch (err) {
+          res.redirect("/");
+        }
+    },
+    approveQuiz: async (req, res) => {
+        console.log(req.body)
+        // console.log(req.body.course)
+        try{
+            const reqCourse = await Courses.findOne({ courseCode: req.body.course }).lean()
+            // console.log(reqUser)
+            const courseID = reqCourse._id
+            // console.log(courseID)
+            await  Quizzes.create({
+                fileName: req.body.fileName,
+                fileLink: req.body.fileLink,
+                courseID: courseID,
+                user: req.body.contributingUser
+            })
+            console.log('Quiz has been approved!')
+            res.redirect('/')
+        } 
+        catch (err) {
+          res.redirect("/");
+        }
+    },
+    approveMidFinal: async (req, res) => {
+        console.log(req.body)
+        // console.log(req.body.course)
+        try{
+            const reqCourse = await Courses.findOne({ courseCode: req.body.course }).lean()
+            // console.log(reqUser)
+            const courseID = reqCourse._id
+            // console.log(courseID)
+            await MidsFinals.create({
+                fileName: req.body.fileName,
+                fileLink: req.body.fileLink,
+                courseID: courseID,
+                user: req.body.contributingUser
+            })
+            console.log('Mid/Final has been approved!')
+            res.redirect('/')
+        } 
+        catch (err) {
+          res.redirect("/");
+        }
+    },
 }

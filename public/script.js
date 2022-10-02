@@ -13,18 +13,21 @@ let betaBtn=document.querySelector('#beta-btn')
 let betaArrowIcon=document.querySelector('#beta-arrow-icon')
 
 const deleteButton = document.querySelectorAll('.deleteButton')
-
-document.querySelector('button').addEventListener('click', deleteContribution)
+const approveButton = document.querySelectorAll('.approveButton')
 
 Array.from(deleteButton).forEach(el => {
     el.addEventListener('click', deleteContribution)
 })
 
+Array.from(approveButton).forEach(el => {
+    el.addEventListener('click', approveContribution)
+})
+
 faqExpand.forEach((element,index) => {
     element.addEventListener('click',() => {
         questions[index].classList.toggle('overflow-hidden')
-        answer[index].classList.toggle('translate-y-12')
-        answer[index].classList.replace('-z-10','z-10')
+        answerP[index].classList.toggle('translate-y-12')
+        answerP[index].classList.replace('-z-10','z-10')
     }) 
 })
 
@@ -46,7 +49,75 @@ async function deleteContribution(){
     }
 }
 
+async function approveContribution(){
+    
+    const contributingUser = this.parentNode.parentNode.childNodes[1].innerText
+    const fileName = this.parentNode.parentNode.childNodes[3].childNodes[0].innerText
+    const fileLink = this.parentNode.parentNode.childNodes[3].childNodes[0].href
+    const course = this.parentNode.parentNode.childNodes[5].innerText
+    const categoryName = this.parentNode.parentNode.childNodes[7].innerText
 
+    if(categoryName === "Assignments"){
+        try{
+            const response = await fetch('/addAssignment', {
+                method: 'post',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    'contributingUser': contributingUser,
+                    'fileName': fileName,
+                    'fileLink': fileLink,
+                    'course': course, 
+                })
+            })
+            const data = await response.json()
+            console.log(data)
+            window.location.reload()
+        }
+        catch(err){
+            console.error(err)
+        }
+    }
+    else if(categoryName === "Quizzes"){
+        try{
+            const response = await fetch('/addQuiz', {
+                method: 'post',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    'contributingUser': contributingUser,
+                    'fileName': fileName,
+                    'fileLink': fileLink,
+                    'course': course, 
+                })
+            })
+            const data = await response.json()
+            console.log(data)
+            window.location.reload()
+        }
+        catch(err){
+            console.error(err)
+        }
+    }
+    else if(categoryName === "MidsFinals"){
+        try{
+            const response = await fetch('/addMidFinal', {
+                method: 'post',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    'contributingUser': contributingUser,
+                    'fileName': fileName,
+                    'fileLink': fileLink,
+                    'course': course, 
+                })
+            })
+            const data = await response.json()
+            console.log(data)
+            window.location.reload()
+        }
+        catch(err){
+            console.error(err)
+        }
+    }
+}
 
 
 faqExpand.forEach((element,index) => {

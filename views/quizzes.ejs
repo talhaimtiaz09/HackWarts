@@ -24,19 +24,20 @@
         <!-- main heading -->
       <h1 class="font-bold text-green-600 text-2xl py-6">Quizzes</h1>
       <!-- data -->
-      <div class="flex justify-between">
-        <div><a href="http://www.africau.edu/images/default/sample.pdf" target="_blank">
-          <img
-          src="/icons/fileIcon.svg"
-          alt="file-icon"
-          class="inline-block"
-          />
-          <h2 class="mx-4 inline-block">CS224 - Mid Term Exam 2022</h2>
-        </a>
+      <% for(let i = 0; i < quizzes.length; i++){ %>
+        <div class="flex justify-between">
+          <div><a href="<%= quizzes[i].fileLink %>" target="_blank">
+            <img
+              src="/icons/fileIcon.svg"
+              alt="file-icon"
+              class="inline-block"
+            />
+            <h2 class="mx-4 inline-block"><%= quizzes[i].fileName %></h2>
+          </a>
+          </div>
         </div>
-        <span class="font-bold text-xl text-green-400 mx-4">+</span>
-      </div>
-      <hr class="w-full h-1 bg-green-400 my-2" />
+        <hr class="w-full h-1 bg-green-400 my-2" />
+      <% } %>
       <!-- data -->
       <div class="flex justify-between">
         <div>
@@ -45,74 +46,8 @@
             alt="file-icon"
             class="inline-block"
           />
-          <h2 class="mx-4 inline-block">CS224 - Mid Term Exam 2022</h2>
+          <h2 class="mx-4 inline-block">Placeholder</h2>
         </div>
-        <span class="font-bold text-xl text-green-400 mx-4">+</span>
-      </div>
-      <hr class="w-full h-1 bg-green-400 my-2" />
-      <!-- data -->
-      <div class="flex justify-between">
-        <div>
-          <img
-            src="/icons/fileIcon.svg"
-            alt="file-icon"
-            class="inline-block"
-          />
-          <h2 class="mx-4 inline-block">CS224 - Mid Term Exam 2022</h2>
-        </div>
-        <span class="font-bold text-xl text-green-400 mx-4">+</span>
-      </div>
-      <hr class="w-full h-1 bg-green-400 my-2" />
-      <!-- data -->
-      <div class="flex justify-between">
-        <div>
-          <img
-            src="/icons/fileIcon.svg"
-            alt="file-icon"
-            class="inline-block"
-          />
-          <h2 class="mx-4 inline-block">CS224 - Mid Term Exam 2022</h2>
-        </div>
-        <span class="font-bold text-xl text-green-400 mx-4">+</span>
-      </div>
-      <hr class="w-full h-1 bg-green-400 my-2" />
-      <!-- data -->
-      <div class="flex justify-between">
-        <div>
-          <img
-            src="/icons/fileIcon.svg"
-            alt="file-icon"
-            class="inline-block"
-          />
-          <h2 class="mx-4 inline-block">CS224 - Mid Term Exam 2022</h2>
-        </div>
-        <span class="font-bold text-xl text-green-400 mx-4">+</span>
-      </div>
-      <hr class="w-full h-1 bg-green-400 my-2" />
-      <!-- data -->
-      <div class="flex justify-between">
-        <div>
-          <img
-            src="/icons/fileIcon.svg"
-            alt="file-icon"
-            class="inline-block"
-          />
-          <h2 class="mx-4 inline-block">CS224 - Mid Term Exam 2022</h2>
-        </div>
-        <span class="font-bold text-xl text-green-400 mx-4">+</span>
-      </div>
-      <hr class="w-full h-1 bg-green-400 my-2" />
-      <!-- data -->
-      <div class="flex justify-between">
-        <div>
-          <img
-            src="/icons/fileIcon.svg"
-            alt="file-icon"
-            class="inline-block"
-          />
-          <h2 class="mx-4 inline-block">CS224 - Mid Term Exam 2022</h2>
-        </div>
-        <span class="font-bold text-xl text-green-400 mx-4">+</span>
       </div>
       <hr class="w-full h-1 bg-green-400 my-2" />
     </div>

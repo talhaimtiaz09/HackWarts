@@ -12,6 +12,9 @@ router.get('/signingOut', homeController.signingOut)
 router.get('/contribute', ensureAuth, homeController.getContribute)
 router.post('/addCourse', homeController.createCourse)
 router.post('/contributing', upload.single("file"), homeController.contributing)
+router.post('/addAssignment', homeController.approveAssignment)
+router.post('/addQuiz', homeController.approveQuiz)
+router.post('/addMidFinal', homeController.approveMidFinal)
 router.delete('/deleteContribution', homeController.deleteContribution)
 
 module.exports = router
