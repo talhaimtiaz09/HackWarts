@@ -32,7 +32,6 @@ faqExpand.forEach((element,index) => {
 })
 
 async function deleteContribution(){
-    
     const cloudinaryID = this.parentNode.parentNode.childNodes[9].innerText
     try{
         const response = await fetch('/deleteContribution', {
