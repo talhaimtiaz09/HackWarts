@@ -164,5 +164,10 @@ menu.addEventListener('click',()=>{
 
 
 betaBtn.addEventListener('click',()=>{
-    betaNote.classList.toggle('-translate-y-36')
+    currHeight=getComputedStyle(betaNote).maxHeight
+    betaNote.classList.toggle('p-4')
+    if(currHeight==='0px')
+    betaNote.style.maxHeight='100px'
+    else if(currHeight==='100px')
+    betaNote.style.maxHeight='0px'
     betaArrowIcon.classList.toggle('rotate-180')})

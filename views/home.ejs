@@ -83,41 +83,49 @@
       <div class="flex">
         <div class="sm:w-1/2 px-16 mt-24 sm:mt-48">
           <h1 class="font-bold text-2xl sm:text-3xl lg:text-4xl">
-            <span class="block text-white ">Introducing GIKI</span>
-            Student Website
+            <span class="inline-block text-white ">Introducing</span>
+            StrateGIK
           </h1>
-          <p class="lg:text-xl lg:py-4">
+
+                 <!-- beta version note -->
+                 <div class="inline-block mt-2">
+                  <button
+                    id="beta-btn"
+                    class="flex mx-auto sm:mx-0 transition-transform duration-100 hover:-translate-y-1 items-center shadow-sm bg-white bg-opacity-40 rounded-md px-3 py-1 text-light text-slate-600 text-sm"
+                  >
+                    Beta Version
+                    <img
+                      id="beta-arrow-icon"
+                      class="w-2 ml-2"
+                      src="./icons/arrowHeadIcon.svg"
+                      alt="icon"
+                    />
+                  </button>
+                    <p
+                      id="beta-note"
+                      class="transition-all max-h-0 overflow-hidden duration-1000 text-sm w-52 my-1 rounded-md text-slate-700 bg-white bg-opacity-30"
+                    >
+                      An early version of a program or application that contains most
+                      of the major features, but is not yet complete
+                    </p>
+                </div>
+
+          <!-- strategic defination  -->
+          <div class="hover:-translate-y-1 md:hover:translate-x-1 md:hover:translate-y-0 transition-transform duration-300 bg-white bg-opacity-10 shadow-xl px-6 py-4 mt-12 rounded-md text-white">
+            <h1 class="font-semibold text-xl sm:text-2xl my-4 text-slate-600">strategic</h1>
+            <h3 class="font-light text-gray-400 mb-2">/strəˈtiːdʒɪk/</h3>
+            <span class="italic mt-3 -ml-3 text-sm sm:text-md text-slate-700">adjective</span>
+            <h2 class="text-xs sm:text-sm py-3 text-slate-500">Relating to the identification of long-term or overall aims and interests and the means of achieving them.</h2>
+          </div>
+          <p class="lg:text-xl py-6 lg:py-4 text-slate-600">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum
             commodi expedita, ipsum unde impedit dolor tenetur magni architecto
             ut error, exercitationem, id soluta. Id beatae obcaecati, veritatis
             accusamus quo voluptates!
           </p>
-          <!-- beta version note -->
-          <div class="inline-block mt-2">
-            <button
-              id="beta-btn"
-              class="flex mx-auto sm:mx-0 transition-transform duration-100 hover:-translate-y-1 items-center border-2 border-white rounded-md px-3 py-1 text-light text-white text-sm"
-            >
-              Beta Version
-              <img
-                id="beta-arrow-icon"
-                class="w-2 ml-2"
-                src="./icons/arrowHeadIcon.svg"
-                alt="icon"
-              />
-            </button>
-            <div class="overflow-y-hidden h-30">
-              <p
-                id="beta-note"
-                class="transition-transform duration-1000 -translate-y-36 text-sm w-52 p-2 my-1 rounded-md text-slate-700 bg-white bg-opacity-30"
-              >
-                An early version of a program or application that contains most
-                of the major features, but is not yet complete
-              </p>
-            </div>
-          </div>
+   
           <button
-          class="block mx-auto sm:mx-0 duration-500 transition-transform active:shadow-none hover:-translate-y-1 active:translate-y-0 shadow-lg bg-white px-4 py-3 my-2 rounded-full font-bold"
+          class="block mx-auto sm:mx-0 duration-500 transition-transform active:shadow-none hover:-translate-y-1 active:translate-y-0 shadow-lg bg-white px-4 py-3 mt-32 rounded-full font-bold"
         >
           <a href="/contribute">Contribute</a>
         </button>
