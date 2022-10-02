@@ -14,11 +14,15 @@ module.exports = {
         res.render('home.ejs', { user: loggedInUser })
     },
     getAboutUs: (req, res) => {
-        res.render('aboutUs.ejs')
+        let loggedInUser = []
+        loggedInUser.push(req.user)
+        res.render('aboutUs.ejs', { user: loggedInUser })
     },
     getDashboard: async (req, res) => {
         const contributionsList = await Contribution.find()
-        res.render('dashboard.ejs', { contributions : contributionsList })
+        let loggedInUser = []
+        loggedInUser.push(req.user)
+        res.render('dashboard.ejs', { contributions: contributionsList, user: loggedInUser })
     },
     createCourse: async (req, res) => {
         try{
@@ -42,7 +46,9 @@ module.exports = {
     },
     getContribute: async (req, res) => {
         const coursesList = await Courses.find().lean()
-        res.render('contribute.ejs', { courses: coursesList })
+        let loggedInUser = []
+        loggedInUser.push(req.user)
+        res.render('contribute.ejs', { courses: coursesList, user: loggedInUser })
     },
     contributing: async (req, res) => {
         // console.log(req.body)

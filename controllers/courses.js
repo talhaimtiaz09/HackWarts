@@ -6,12 +6,16 @@ const MidsFinals = require('../models/midsfinals')
 module.exports = {
     getCourses: async (req, res) => {
         const coursesList = await Courses.find()
-        res.render('courses.ejs', {courses: coursesList})
+        let loggedInUser = []
+        loggedInUser.push(req.user)
+        res.render('courses.ejs', {courses: coursesList, user: loggedInUser })
     },
     getCourseContent: async (req, res) => {
         try {
             const course = await Courses.findById(req.params.id);
-            res.render("courseContent.ejs", { course: course });
+            let loggedInUser = []
+            loggedInUser.push(req.user)
+            res.render("courseContent.ejs", { course: course, user: loggedInUser });
           } catch (err) {
             console.log(err);
           }
@@ -22,7 +26,9 @@ module.exports = {
           // console.log(req.params.id)
           const assignmentsList = await Assignments.find({ courseID: req.params.id })
           // console.log(assignmentsList)
-          res.render("assignments.ejs", { course: course, assignments: assignmentsList });
+          let loggedInUser = []
+          loggedInUser.push(req.user)
+          res.render("assignments.ejs", { course: course, assignments: assignmentsList, user: loggedInUser });
         } catch (err) {
           console.log(err);
         }
@@ -31,7 +37,9 @@ module.exports = {
         try {
           const course = await Courses.findById(req.params.id);
           const quizzesList  = await Quizzes.find({ courseID: req.params.id })
-          res.render("quizzes.ejs", { course: course, quizzes: quizzesList });
+          let loggedInUser = []
+          loggedInUser.push(req.user)
+          res.render("quizzes.ejs", { course: course, quizzes: quizzesList, user: loggedInUser });
         } catch (err) {
           console.log(err);
         }
@@ -40,7 +48,9 @@ module.exports = {
         try {
           const course = await Courses.findById(req.params.id);
           const midsFinalsList = await MidsFinals.find({ courseID: req.params.id })
-          res.render("midsFinals.ejs", { course: course, midsfinals: midsFinalsList });
+          let loggedInUser = []
+          loggedInUser.push(req.user)
+          res.render("midsFinals.ejs", { course: course, midsfinals: midsFinalsList, user: loggedInUser });
         } catch (err) {
           console.log(err);
         }
