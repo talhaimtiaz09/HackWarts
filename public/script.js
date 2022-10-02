@@ -145,9 +145,7 @@ faqExpand.forEach((element,index) => {
 
 menu.addEventListener('click',()=>{
   li_s.forEach((Element)=>{
-    Element.classList.toggle('hover:text-lg')
     Element.classList.toggle('border-b-2')
-    Element.classList.toggle('hover:bg-slate-100')
     Element.classList.toggle('border-slate-100')
     Element.classList.toggle('w-full')
     Element.classList.toggle('py-4')
