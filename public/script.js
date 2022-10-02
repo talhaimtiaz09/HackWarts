@@ -1,6 +1,17 @@
+let nav=document.querySelector('[data-ul]')
+let menu=document.querySelector('#menuIcon')
+let dimScreen=document.querySelector('#dimScreen')
+let li_s=document.querySelectorAll('.li')
 let faqExpand = document.querySelectorAll('.expand')
-let answer = document.querySelectorAll('.answers')
+let faqCollapse = document.querySelectorAll('.collapse')
+let answerP = document.querySelectorAll('.answer-p')
+let answerContainer = document.querySelectorAll('.answer-container')
+let hLine = document.querySelectorAll('.h-line')
 let questions = document.querySelectorAll('.ques')
+let betaNote=document.querySelector('#beta-note')
+let betaBtn=document.querySelector('#beta-btn')
+let betaArrowIcon=document.querySelector('#beta-arrow-icon')
+
 const deleteButton = document.querySelectorAll('.deleteButton')
 
 document.querySelector('button').addEventListener('click', deleteContribution)
@@ -34,3 +45,56 @@ async function deleteContribution(){
         console.error(err)
     }
 }
+
+
+
+
+faqExpand.forEach((element,index) => {
+    function handleFaqExpand(){
+        
+        
+        const currentHeight=getComputedStyle(answerP[index]).maxHeight
+        if(currentHeight==="0px")
+        {answerP[index].style.maxHeight="150px"
+        element.classList.toggle('rotate-90')
+    }
+    else if(currentHeight==="150px"){
+        
+        answerP[index].classList.toggle('ease-in-out','ease-out')
+        answerP[index].style.maxHeight="0px"
+        element.classList.toggle('rotate-90')
+    }
+ 
+    }
+
+    
+    element.addEventListener('click',handleFaqExpand ) 
+})
+
+
+
+menu.addEventListener('click',()=>{
+  li_s.forEach((Element)=>{
+    Element.classList.toggle('hover:text-lg')
+    Element.classList.toggle('border-b-2')
+    Element.classList.toggle('hover:bg-slate-100')
+    Element.classList.toggle('border-slate-100')
+    Element.classList.toggle('w-full')
+    Element.classList.toggle('py-4')
+
+
+  })
+  if(menu.src.includes('/icons/closeIcon.svg'))
+  menu.src='./icons/menuIcon.svg'
+  else
+  menu.src='./icons/closeIcon.svg'
+
+
+  nav.classList.toggle('animateNav')
+  dimScreen.classList.toggle('hidden')
+})
+
+
+betaBtn.addEventListener('click',()=>{
+    betaNote.classList.toggle('-translate-y-36')
+    betaArrowIcon.classList.toggle('rotate-180')})
