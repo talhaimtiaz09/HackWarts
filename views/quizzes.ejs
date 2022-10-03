@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <title>Quizzes WIP</title>
+    <title>Quizzes</title>
   </head>
   <body>
-    <nav class="flex justify-between text-teal-500 bg-white items-center">
+    <nav class="flex justify-between text-teal-500 bg-white items-center border-b-2 border-teal-500">
       <span class="mx-4 py-2 font-bold text-xl">
         <a href="/">
           Strate<span class="text-slate-500">GIK</span>
@@ -42,16 +42,16 @@
                 <li class="hover:bg-teal-100 hover:bg-opacity-40 hover:translate-x-1 li md:py-4 px-6 md:pr-24 transition-all duration-500 hover:text-teal-600"><a href="/signingOut">Sign Out</a></li>
                 <% } %>
               </div>
-                <img class="w-7 mx-6 ml-2 md:block hidden hover:-translate-y-1 active:translate-y-1 transition-transform duration-700 profileIcon" src="/icons/profileIcon.png" alt="profileIcon">
+                <img class="w-7 mx-6 ml-2 md:block hidden hover:-translate-y-1 active:translate-y-1 transition-transform duration-700 profileIcon" src="/icons/profileIcon.svg" alt="profileIcon">
       </ul>
     </nav>
     <!-- hero section  -->
     <div class="w-2/3 mx-auto my-20">
         <!-- main heading -->
-      <h1 class="font-bold text-green-600 text-2xl py-6">Quizzes</h1>
+      <h1 class="font-bold text-teal-600 text-2xl py-6">Quizzes</h1>
       <!-- data -->
       <% for(let i = 0; i < quizzes.length; i++){ %>
-        <div class="flex justify-between">
+        <div class="flex justify-between hover:translate-x-2 transition-transform duration-200">
           <div><a href="<%= quizzes[i].fileLink %>" target="_blank">
             <img
               src="/icons/fileIcon.svg"
@@ -62,10 +62,10 @@
           </a>
           </div>
         </div>
-        <hr class="w-full h-1 bg-green-400 my-2" />
+        <hr class="w-full h-[2px] bg-teal-400 my-2" />
       <% } %>
       <!-- data -->
-      <div class="flex justify-between">
+      <div class="flex justify-between hover:translate-x-2 transition-transform duration-200">
         <div>
           <img
             src="/icons/fileIcon.svg"
@@ -75,7 +75,7 @@
           <h2 class="mx-4 inline-block">Placeholder</h2>
         </div>
       </div>
-      <hr class="w-full h-1 bg-green-400 my-2" />
+      <hr class="w-full h-[2px] bg-teal-400 my-2" />
     </div>
     <script>
       let navDropDown=document.querySelector('.nav-drop-down')

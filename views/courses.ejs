@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://livejs.com/live.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <title>Courses WIP</title>
+    <title>Courses</title>
 </head>
-<body class="bg-green-200">
-    <nav class="flex justify-between text-teal-500 bg-white items-center">
+<body>
+    <nav class="flex justify-between text-teal-500 bg-white items-center border-b-2 border-teal-500">
         <span class="mx-4 py-2 font-bold text-xl">
           <a href="/">
             Strate<span class="text-slate-500">GIK</span>
@@ -42,7 +43,7 @@
                   <li class="hover:bg-teal-100 hover:bg-opacity-40 hover:translate-x-1 li md:py-4 px-6 md:pr-24 transition-all duration-500 hover:text-teal-600"><a href="/signingOut">Sign Out</a></li>
                   <% } %>
                 </div>
-                  <img class="w-7 mx-6 ml-2 md:block hidden hover:-translate-y-1 active:translate-y-1 transition-transform duration-700 profileIcon" src="./icons/profileIcon.png" alt="profileIcon">
+                  <img class="w-7 mx-6 ml-2 md:block hidden hover:-translate-y-1 active:translate-y-1 transition-transform duration-700 profileIcon" src="./icons/profileIcon.svg" alt="profileIcon">
         </ul>
       </nav>
   <!-- SearchIcon isn't available in Beta-Version -->
@@ -52,11 +53,11 @@
    </div> -->
    <section class="mt-20 h-screen">
 
-    <h1 class="text-3xl text-center font-semibold tracking-wide mt-20 text-teal-600">All of the Courses are listed below</h1>
+    <h1 class="text-teal-600 text-3xl text-center font-bold tracking-wide mt-20">List of Courses</h1>
     <div class="bg-white rounded-lg w-2/3 mx-auto p-10 mt-5">
         <% for(let i = 0; i < courses.length; i++){ %>
-         <div class="transition-all duration-200 hover:translate-x-2"><a href="courses/<%=courses[i]._id%>/courseContent"><img class="inline-block" src="./icons/folder-icon.svg" alt="folder"><%= courses[i].courseCode %> -  <%= courses[i].courseTitle %></a></div>
-         <hr class="w-full h-1">
+         <div class="text-slate-600 transition-all duration-200 hover:translate-x-2"><a href="courses/<%=courses[i]._id%>/courseContent"><img class="inline-block" src="./icons/folder-icon.svg" alt="folder"><%= courses[i].courseCode %> -  <%= courses[i].courseTitle %></a></div>
+         <hr class="w-full h-[2px] bg-teal-400 my-2">
          <% } %>
      </div> 
  </section>
