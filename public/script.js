@@ -167,7 +167,7 @@ betaBtn.addEventListener('click',()=>{
     currHeight=getComputedStyle(betaNote).maxHeight
     betaNote.classList.toggle('p-4')
     if(currHeight==='0px')
-    betaNote.style.maxHeight='100px'
-    else if(currHeight==='100px')
+    betaNote.style.maxHeight='200px'
+    else if(currHeight==='200px')
     betaNote.style.maxHeight='0px'
     betaArrowIcon.classList.toggle('rotate-180')})
