@@ -4,7 +4,10 @@ module.exports = {
     extend: {
       colors:{
  customTeal:'#50C2B5',
-  
+
+      },
+      fontFamily:{
+        'Roboto':['Roboto', 'sans-serif'],
       },
   },
 },

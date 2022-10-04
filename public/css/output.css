@@ -591,6 +591,10 @@ video {
   margin: 1rem;
 }
 
+.m-0 {
+  margin: 0px;
+}
+
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -649,6 +653,11 @@ video {
 .mx-20 {
   margin-left: 5rem;
   margin-right: 5rem;
+}
+
+.-mx-2 {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
 }
 
 .ml-2 {
@@ -1093,6 +1102,14 @@ video {
   padding: 2rem;
 }
 
+.p-0 {
+  padding: 0px;
+}
+
+.p-1 {
+  padding: 0.25rem;
+}
+
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -1188,6 +1205,10 @@ video {
 
 .text-center {
   text-align: center;
+}
+
+.font-Roboto {
+  font-family: Roboto, sans-serif;
 }
 
 .text-xl {
@@ -1677,8 +1698,8 @@ video {
     width: 33.333333%;
   }
 
-  .sm\:w-1\/4 {
-    width: 25%;
+  .sm\:w-52 {
+    width: 13rem;
   }
 
   .sm\:flex-row {
@@ -1967,8 +1988,8 @@ video {
     width: 33.333333%;
   }
 
-  .xl\:w-1\/5 {
-    width: 20%;
+  .xl\:w-80 {
+    width: 20rem;
   }
 }
 
