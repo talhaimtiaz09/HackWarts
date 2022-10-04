@@ -95,7 +95,7 @@
       </ul>
     </nav>
     <!-- About Us -->
-    <div class="mt-32 w-2/3 mx-auto">
+    <div class="mt-32 w-2/3 mx-auto relative">
       <h1
         class="text-teal-600 font-thick text-3xl text-center lg:text-left py-3"
       >
@@ -105,7 +105,7 @@
       <!-- Haider Zaidi -->
       <div class="">
         <img
-        
+         style="clip-path:circle()"
           class="rounded-full mx-auto w-32 lg:hidden"
           src="./haider.jpg"
           alt=""
@@ -158,11 +158,14 @@
       </div>
       <!-- Talha Imtiaz  -->
       <div class="my-10 mb-48">
-        <img
-          class="rounded-full border-4 border-teal-600 mx-auto w-32 lg:hidden"
-          src="./profile.jpg"
-          alt=""
-        />
+
+          <img
+          style="clip-path:circle()"
+          class="rounded-full mx-auto w-32 lg:hidden"
+          src="./talhaProfile.jpg"
+          alt="profile"
+          />
+      
 
         <div class="flex justify-between items-center">
           <div class="text-center lg:text-left">
@@ -199,11 +202,17 @@
               </a>
             </div>
           </div>
-          <img
-            class="rounded-full border-4 border-teal-600 hidden lg:block w-52 lg:w-64"
-            src="./profile.jpg"
+
+<div class="bg-teal-600 absolute rounded-full py-2 right-0">
+
+  <img
+  style="clip-path:circle()"
+  class="hidden lg:block w-52 lg:w-64"
+  src="./talhaProfile.jpg"
             alt=""
-          />
+            />
+            
+          </div>
         </div>
       </div>
     </div>
