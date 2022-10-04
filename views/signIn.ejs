@@ -10,30 +10,30 @@
   <body class="bg-teal-100">
       <img class="absolute -z-10 w-full h-screen" src="/icons/bg-abstract-lines.svg" alt="lines-vector">
     <!-- Sign In box -->
-    <div class="bg-white rounded-2xl py-16 px-10 w-96 shadow-xl sm:ml-auto my-36 mx-20">
+    <div class="bg-white rounded-2xl py-16 px-10 sm:w-96 shadow-xl sm:ml-auto my-36 mx-4 sm:mx-20">
       
       <img src="/icons/loginIllustration.svg" alt="">
-      <h1 class="font-semibold text-slate-500 text-2xl text-center py-2 mt-4 mb-4">Sign In</h1>
+      <h1 class="font-semibold text-slate-500 text-lg sm:text-2xl text-center py-2 mt-4 mb-4">Sign In</h1>
   
      
       <form action="/users/signingIn" method="post">
 
         <input
-        class="text-center w-full py-3 my-2 text-lg bg-slate-100 rounded-md shadow-md"
+        class="text-center w-full py-3 my-2 sm:text-lg bg-slate-100 rounded-md shadow-md"
         type="text"
         name="email"
         id="Email"
         placeholder="Email"
         />
         <input
-        class="text-center w-full py-3 my-2 text-lg bg-slate-100 rounded-md shadow-md"
+        class="text-center w-full py-3 my-2 sm:text-lg bg-slate-100 rounded-md shadow-md"
         type="password"
         name="password"
         id="Password"
         placeholder="Password"
         />
         <button
-        class="block mt-10 bg-teal-400 text-white font-semibold text-lg w-full py-3 my-4 rounded-lg shadow-md"
+        class="block mt-10 bg-teal-400 text-white font-semibold sm:text-lg w-full py-3 my-4 rounded-lg shadow-md"
         >
         Sign In
     </button>

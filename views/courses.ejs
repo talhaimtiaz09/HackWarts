@@ -53,10 +53,10 @@
    </div> -->
    <section class="mt-20 h-screen">
 
-    <h1 class="text-teal-600 text-3xl text-center font-bold tracking-wide mt-20">List of Courses</h1>
-    <div class="bg-white rounded-lg w-2/3 mx-auto p-10 mt-5">
+    <h1 class="text-teal-600 text-lg  md:text-3xl text-center font-bold tracking-wide mt-20">List of Courses</h1>
+    <div class="bg-white rounded-lg  px-10 sm:w-2/3 sm:px-0 mx-auto p-10 mt-5">
         <% for(let i = 0; i < courses.length; i++){ %>
-         <div class="text-slate-600 transition-all duration-200 hover:translate-x-2"><a href="courses/<%=courses[i]._id%>/courseContent"><img class="inline-block" src="./icons/folder-icon.svg" alt="folder"><%= courses[i].courseCode %> -  <%= courses[i].courseTitle %></a></div>
+         <div class="text-slate-600 text-sm sm:text-md transition-all duration-200 hover:translate-x-2"><a href="courses/<%=courses[i]._id%>/courseContent"><img class="inline-block w-8 sm:w-10 md:w-auto" src="./icons/folder-icon.svg" alt="folder"><%= courses[i].courseCode %> -  <%= courses[i].courseTitle %></a></div>
          <hr class="w-full h-[2px] bg-teal-400 my-2">
          <% } %>
      </div> 

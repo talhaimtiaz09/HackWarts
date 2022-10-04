@@ -48,7 +48,7 @@
     <!-- hero section  -->
     <div class="w-2/3 mx-auto my-20">
         <!-- main heading -->
-      <h1 class="font-bold text-teal-600 text-2xl py-6">Quizzes</h1>
+      <h1 class="font-bold text-teal-600 text-lg sm:text-2xl py-6">Quizzes</h1>
       <!-- data -->
       <% for(let i = 0; i < quizzes.length; i++){ %>
         <div class="flex justify-between hover:translate-x-2 transition-transform duration-200">
@@ -56,9 +56,9 @@
             <img
               src="/icons/fileIcon.svg"
               alt="file-icon"
-              class="inline-block"
+              class="inline-block w-8 sm:w-10 md:w-auto"
             />
-            <h2 class="mx-4 inline-block"><%= quizzes[i].fileName %></h2>
+            <h2 class="mx-4 inline-block text-sm sm:text-md"><%= quizzes[i].fileName %></h2>
           </a>
           </div>
         </div>
@@ -70,9 +70,9 @@
           <img
             src="/icons/fileIcon.svg"
             alt="file-icon"
-            class="inline-block"
+            class="inline-block w-8 sm:w-10 md:w-auto"
           />
-          <h2 class="mx-4 inline-block">Placeholder</h2>
+          <h2 class="mx-4 inline-block text-sm sm:text-md">Placeholder</h2>
         </div>
       </div>
       <hr class="w-full h-[2px] bg-teal-400 my-2" />

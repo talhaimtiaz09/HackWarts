@@ -11,22 +11,22 @@
       <img class="absolute -z-10 w-full h-screen" src="/icons/bg-abstract-lines.svg" alt="lines-vector">
     <!-- Sign Up box -->
     <div
-      class="bg-white rounded-2xl py-16 px-10 w-96 shadow-xl sm:ml-auto my-36 mx-20"
+      class="bg-white rounded-2xl py-16 px-10 sm:w-96 shadow-xl sm:ml-auto my-36 mx-4 sm:mx-20"
     >
     <img src="/icons/loginIllustration.svg" alt="">
-    <h1 class="font-semibold text-slate-500 text-2xl text-center py-2 mt-4 mb-4">Sign Up</h1>
+    <h1 class="font-semibold text-slate-500 text-lg sm:text-2xl text-center py-2 mt-4 mb-4">Sign Up</h1>
 
       
       <% if(typeof errors != 'undefined') { %>
         <% errors.forEach(function(error) { %> 
-            <span class="text-sm font-semibold text-slate-500 text-center px-4 block">
+            <span class="text-xs sm:text-sm font-semibold text-slate-500 text-center px-4 block">
               <%= error.msg %>
             </span>
         <% }) %>
       <% } %>
       <form action="/users/signingUp" method="post">
       <input
-        class="text-center w-full py-3 my-2 text-lg bg-slate-100 rounded-md shadow-md"
+        class="text-center w-full py-3 my-2 sm:text-lg bg-slate-100 rounded-md shadow-md"
         type="text"
         name="userName"
         id="Username"
@@ -34,7 +34,7 @@
         value="<%= typeof name != 'undefined' ? name : '' %>"
       />
       <input
-      class="text-center w-full py-3 my-2 text-lg bg-slate-100 rounded-md shadow-md"
+      class="text-center w-full py-3 my-2 sm:text-lg bg-slate-100 rounded-md shadow-md"
       type="text"
       name="email"
       id="Email"
@@ -42,7 +42,7 @@
       value="<%= typeof email != 'undefined' ? email : '' %>"
       />
       <input
-        class="text-center w-full py-3 my-2 text-lg bg-slate-100 rounded-md shadow-md"
+        class="text-center w-full py-3 my-2 sm:text-lg bg-slate-100 rounded-md shadow-md"
         type="password"
         name="password"
         id="Password"
@@ -50,7 +50,7 @@
         value="<%= typeof email != 'undefined' ? password : '' %>"
         />
         <input
-        class="text-center w-full py-3 my-2 text-lg bg-slate-100 rounded-md shadow-md"
+        class="text-center w-full py-3 my-2 sm:text-lg bg-slate-100 rounded-md shadow-md"
         type="password"
         name="password2"
         id="Password2"
@@ -58,7 +58,7 @@
         value="<%= typeof email != 'undefined' ? password2 : '' %>"
         />
         <button
-          class="mt-10 block bg-teal-400 text-white font-semibold text-lg w-full py-3 my-4 rounded-lg shadow-md">
+          class="mt-10 block bg-teal-400 text-white font-semibold sm:text-lg w-full py-3 my-4 rounded-lg shadow-md">
           Sign Up
         </button>
     </form>

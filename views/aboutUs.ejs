@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="text/javascript" src="https://livejs.com/live.js"></script>
-    <link rel="stylesheet" href="/css/output.css">
+    <link rel="stylesheet" href="/css/output.css" />
 
     <title>About Us</title>
   </head>
@@ -103,9 +103,14 @@
       </h1>
       <hr class="bg-teal-600 bg-opacity-50 h-[2px]" />
       <!-- Haider Zaidi -->
-      <div class="">
+
+      <div class="relative">
+        <span
+          class="bg-teal-600 lg:hidden translate-x-1/2 right-1/2 top-[72px] w-[140px] h-[140px] [clip-path:circle()] absolute"
+        >
+        </span>
         <img
-         style="clip-path:circle()"
+          style="clip-path: circle()"
           class="rounded-full mx-auto w-32 lg:hidden"
           src="./haider.jpg"
           alt=""
@@ -113,62 +118,75 @@
 
         <div class="flex justify-between items-center">
           <div class="text-center lg:text-left">
-            <h2 class="text-teal-600 font-bold text-2xl pt-10 pb-2 sm:py-8">
+            <h2
+              class="text-teal-600 font-bold text-2xl lg:pt-10 pb-2 -mt-4 sm:mt-0 sm:py-8"
+            >
               Haider Zaidi
             </h2>
             <p
-              class="cursor-pointer text-sm font-light sm:text-lg md:text-xl tracking-wider lg:w-2/3 px-10 sm:px-0"
+              class="cursor-pointer text-sm font-light sm:text-lg md:text-xl tracking-wider md:w-1/2 xl:w-2/3 px-10 sm:px-0 mx-auto lg:mx-0"
             >
-            Hello, I'm Haider Zaidi, a CS student from Batch 31 at the GIK Institute. As a Full Stack Developer, contributing on both Front but primarily the Backend for this project has been a been a great learning experience for me and I hope to get more of such opportunities in the future. Feel free to reach out to me for any personal queries using the links below.
+              Hello, I'm Haider Zaidi, a CS student from Batch 31 at the GIK
+              Institute. As a Full Stack Developer, contributing on both Front
+              but primarily the Backend for this project has been a been a great
+              learning experience for me and I hope to get more of such
+              opportunities in the future. Feel free to reach out to me for any
+              personal queries using the links below.
             </p>
             <!-- social Icons  -->
             <div class="flex justify-between w-32 mt-4 mx-auto lg:mx-0">
-              <a href="https://www.linkedin.com/in/haider-zaidi-/" target="_blank">
-
+              <a
+                href="https://www.linkedin.com/in/haider-zaidi-/"
+                target="_blank"
+              >
                 <img
-                class="w-7 hover:-translate-y-1 active:translate-y-1 transition-transform duration-300"
-                src="./icons/linkedInIcon.svg"
-                alt="social-icon"
+                  class="w-7 hover:-translate-y-1 active:translate-y-1 transition-transform duration-300"
+                  src="./icons/linkedInIcon.svg"
+                  alt="social-icon"
                 />
               </a>
               <a href="https://github.com/haiderzaidi07" target="_blank">
                 <img
-                class="w-7 hover:-translate-y-1 active:translate-y-1 transition-transform duration-300"
-                src="./icons/githubIcon.svg"
-                alt="social-icon"
-              />
+                  class="w-7 hover:-translate-y-1 active:translate-y-1 transition-transform duration-300"
+                  src="./icons/githubIcon.svg"
+                  alt="social-icon"
+                />
               </a>
               <a href="mailto:haiderzaidi.work@gmail.com">
-
                 <img
-                class="w-10 hover:-translate-y-1 active:translate-y-1 transition-transform duration-300"
-                src="./icons/mailIcon.svg"
-                alt="social-icon"
+                  class="w-10 hover:-translate-y-1 active:translate-y-1 transition-transform duration-300"
+                  src="./icons/mailIcon.svg"
+                  alt="social-icon"
                 />
               </a>
             </div>
           </div>
-          <div style="clip-path:circle()" class="bg-teal-600 absolute p-1 right-0">
-
+          <div
+            style="clip-path: circle()"
+            class="hidden lg:block bg-teal-600 absolute p-1 right-0"
+          >
             <img
-            style="clip-path:circle()"
-            class=" border-4 hidden lg:block w-52 lg:w-64"
-            src="./haider.jpg"
-            alt=""
+              style="clip-path: circle()"
+              class="border-4 hidden lg:block w-52 lg:w-64"
+              src="./haider.jpg"
+              alt=""
             />
           </div>
         </div>
       </div>
       <!-- Talha Imtiaz  -->
-      <div class="my-10 mb-48">
+      <div class="mt-32 mb-48 py-2 relative">
+        <span
+          class="bg-teal-600 lg:hidden translate-x-1/2 right-1/2 top-[2px] w-[150px] h-[150px] [clip-path:circle()] absolute"
+        >
+        </span>
 
-          <img
-          style="clip-path:circle()"
-          class="rounded-full mx-auto w-32 lg:hidden"
+        <img
+          style="clip-path: circle()"
+          class="rounded-full mx-auto w-36 lg:hidden"
           src="./talhaProfile.jpg"
           alt="profile"
-          />
-      
+        />
 
         <div class="flex justify-between items-center">
           <div class="text-center lg:text-left">
@@ -176,13 +194,21 @@
               Talha Imtiaz
             </h2>
             <p
-              class="cursor-pointer text-sm font-light sm:text-lg md:text-xl tracking-wider lg:w-2/3 px-10 sm:px-0"
+              class="cursor-pointer text-sm font-light sm:text-lg md:text-xl tracking-wider md:w-1/2 xl:w-2/3 mx-auto lg:mx-0 px-10 sm:px-0"
             >
-            Hey, I am a sophomore at GIK Institute doing a bachelor's in Computer Science. My ever-growing interest in designing made me learn UI/UX and Front-end development which helped me build this project. I have been teaching students for a while and if you have any personal or business queries, feel free to reach out at any of the listed social platforms. I will be happy to help you out.
+              Hey, I am a sophomore at GIK Institute doing a bachelor's in
+              Computer Science. My ever-growing interest in designing made me
+              learn UI/UX and Front-end development which helped me build this
+              project. I have been teaching students for a while and if you have
+              any personal or business queries, feel free to reach out at any of
+              the listed social platforms. I will be happy to help you out.
             </p>
             <!-- social Icons  -->
             <div class="flex justify-between w-32 mt-4 mx-auto lg:mx-0">
-              <a href="https://www.linkedin.com/in/talha-imtiaz342/" target="_blank">
+              <a
+                href="https://www.linkedin.com/in/talha-imtiaz342/"
+                target="_blank"
+              >
                 <img
                   class="w-7 hover:-translate-y-1 active:translate-y-1 transition-transform duration-300"
                   src="./icons/linkedInIcon.svg"
@@ -206,15 +232,16 @@
             </div>
           </div>
 
-<div style="clip-path:circle()" class="bg-teal-600 p-1 absolute right-0">
-
-  <img
-  style="clip-path:circle()"
-  class="hidden lg:block w-52 lg:w-64"
-  src="./talhaProfile.jpg"
-            alt=""
+          <div
+            style="clip-path: circle()"
+            class="hidden lg:block bg-teal-600 p-1 absolute right-0"
+          >
+            <img
+              style="clip-path: circle()"
+              class="hidden lg:block w-52 lg:w-64"
+              src="./talhaProfile.jpg"
+              alt=""
             />
-            
           </div>
         </div>
       </div>
