@@ -58,7 +58,7 @@ app.use(flash())
 //     // await Contribution.remove({ cloudinaryId: req.body.cloudinID });
     
 //     console.log("Deleted Contribution");
-//     res.redirect("/dashboard");
+//     res.redirect("/xlzjoorD6C");
 //   } 
 //   catch (err) {
 //     res.redirect("/");
