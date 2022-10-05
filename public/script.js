@@ -153,9 +153,9 @@ menu.addEventListener('click',()=>{
 
   })
   if(menu.src.includes('/icons/closeIcon.svg'))
-  menu.src='./icons/menuIcon.svg'
+  menu.src='/icons/menuIcon.svg'
   else
-  menu.src='./icons/closeIcon.svg'
+  menu.src='/icons/closeIcon.svg'
 
 
   nav.classList.toggle('animateNav')
@@ -171,3 +171,16 @@ betaBtn.addEventListener('click',()=>{
     else if(currHeight==='200px')
     betaNote.style.maxHeight='0px'
     betaArrowIcon.classList.toggle('rotate-180')})
+
+
+
+    // // Nav bar responsiveness script 
+    // let navDropDown=document.querySelector('.nav-drop-down')
+    // let profileIcon=document.querySelector('.profileIcon')
+    // profileIcon.addEventListener('click',()=>{
+    //   const currHeight1=getComputedStyle(navDropDown).maxHeight
+    //   if(currHeight1=='0px')
+    //   navDropDown.style.maxHeight= '200px';
+    //   else if(currHeight1=='200px')
+    //   navDropDown.style.maxHeight= '0px';
+    // })

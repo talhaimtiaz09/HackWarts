@@ -9,40 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
 <link rel="stylesheet" href="./css/font.css">
-<!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> -->
+<link rel="stylesheet" href="./css/navAnimation.css">
     <title>StrateGIK</title>
   </head>
-
-  <!-- temporary custom style  -->
-  <style>
-    .b-round {
-      border-radius: 0% 0% 50% 50%;
-      border-top: 0;
-    }
-    .w-double {
-      width: 200%;
-    }
-    .h-double {
-      height: 200%;
-    }
-    .animateNav{
-      animation: animateMenu 2s 1 forwards;
-      top: -300px;
-    }
-
-
-    @keyframes animateMenu {
-      0%{
-        top:-300px;
-      }
-      100%{
-        top:0px;
-        padding-top: 20px;
-        border-top: 3px solid rgb(94 234 212);
-      }
-    }
-  </style>
-
 <body>
   <div id="dimScreen" class="hidden fixed w-full h-full bg-slate-800 z-10 opacity-50"></div>
   <nav class="flex justify-between text-teal-500 bg-white items-center">
@@ -312,10 +281,13 @@
         >CONTACT US</span
       >
       <hr class="w-1/6 mt-2 mx-auto bg-slate-100" />
-      <span
+      <a href="mailto:strategik.contact@gmail.com">
+
+        <span
         class="transition-opacity hover:opacity-100 opacity-80 pt-2 text-center text-xs sm:text-sm font-thin tracking-[2px] sm:tracking-[4px]"
         >strategik.contact@gmail.com</span
-      >
+        >
+      </a>
       <span
         class="block text-center text-xs font-thin tracking-wide"
         >StrateGIK © 2022. All rights reserved</span
@@ -323,9 +295,8 @@
     </footer>
 
     <script src="./script.js"></script>
-
-
     <script>
+      // Nav bar responsiveness script 
       let navDropDown=document.querySelector('.nav-drop-down')
       let profileIcon=document.querySelector('.profileIcon')
       profileIcon.addEventListener('click',()=>{
@@ -335,6 +306,9 @@
         else if(currHeight=='200px')
         navDropDown.style.maxHeight= '0px';
       })
-      </script> 
+      </script>
+
+
+ 
   </body>
 </html>

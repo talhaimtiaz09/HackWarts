@@ -1,0 +1,27 @@
+
+.b-round {
+  border-radius: 0% 0% 50% 50%;
+  border-top: 0;
+}
+.w-double {
+  width: 200%;
+}
+.h-double {
+  height: 200%;
+}
+.animateNav{
+  animation: animateMenu 2s 1 forwards;
+  top: -300px;
+}
+
+
+@keyframes animateMenu {
+  0%{
+    top:-300px;
+  }
+  100%{
+    top:0px;
+    padding-top: 20px;
+    border-top: 3px solid rgb(94 234 212);
+  }
+}

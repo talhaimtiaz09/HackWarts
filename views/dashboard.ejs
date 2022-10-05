@@ -5,48 +5,100 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="text/javascript" src="https://livejs.com/live.js"></script>
-    <title>Dashboard</title>
+    <link rel="stylesheet" href="./css/navAnimation.css" />
     <link rel="stylesheet" href="./css/output.css" />
+
+    <title>Dashboard</title>
   </head>
   <body class="bg-emerald-50">
-    
+    <div
+      id="dimScreen"
+      class="hidden fixed w-full h-full bg-slate-800 z-10 opacity-50"
+    ></div>
+
     <nav class="flex justify-between text-teal-500 bg-white items-center">
       <span class="mx-4 py-2 font-bold text-xl">
-        <a href="/">
-          Strate<span class="text-slate-500">GIK</span>
-        </a>
+        <a href="/"> Strate<span class="text-slate-500">GIK</span> </a>
       </span>
-      <img id="menuIcon" class="w-6 m-4 md:hidden z-30" src="./icons/menuIcon.svg" alt="hamburger-icon">
-      <ul data-ul class="md:flex-row md:top-auto md:w-auto bg-slate-50 pb-5 md:pb-px md:bg-white -top-96 text-center flex flex-col items-center w-full md:relative fixed z-20">
-        
-        <li class="li md:my-4 mx-6 transition-all duration-500 hover:bg-teal-100 hover:bg-opacity-40 md:hover:bg-white hover:text-teal-600 hover:translate-x-1 md:hover:-translate-y-1 md:hover:translate-x-0"><a href="/">Home</a></li>
+      <img
+        id="menuIcon"
+        class="w-6 m-4 md:hidden z-30"
+        src="./icons/menuIcon.svg"
+        alt="hamburger-icon"
+      />
+      <ul
+        data-ul
+        class="md:flex-row md:top-auto md:w-auto bg-slate-50 pb-5 md:pb-px md:bg-white -top-96 text-center flex flex-col items-center w-full md:relative fixed z-20"
+      >
+      <% if(user[0] != undefined){ %>
+        <li
+        class="md:hidden cursor-default select-none li text-slate-500 font-bold ml-2"
+        >
+        <%= user[0].userName %>
+      </li>
+      <%}%>
+      <li
+        class="li md:my-4 mx-6 transition-all duration-500 hover:bg-teal-100 hover:bg-opacity-40 md:hover:bg-white hover:text-teal-600 hover:translate-x-1 md:hover:-translate-y-1 md:hover:translate-x-0"
+      >
+        <a href="/">Home</a>
+      </li>
+        <li
+          class="li md:my-4 mx-6 transition-all duration-500 hover:bg-teal-100 hover:bg-opacity-40 md:hover:bg-white hover:text-teal-600 hover:translate-x-1 md:hover:-translate-y-1 md:hover:translate-x-0"
+        >
+          <a href="/courses">Course List</a>
+        </li>
+        <li
+          class="li md:my-4 mx-6 transition-all duration-500 hover:bg-teal-100 hover:bg-opacity-40 md:hover:bg-white hover:text-teal-600 hover:translate-x-1 md:hover:-translate-y-1 md:hover:translate-x-0"
+        >
+          <a href="/contribute">Contribute</a>
+        </li>
+        <li
+          class="li md:my-4 mx-6 transition-all duration-500 hover:bg-teal-100 hover:bg-opacity-40 md:hover:bg-white hover:text-teal-600 hover:translate-x-1 md:hover:-translate-y-1 md:hover:translate-x-0"
+        >
+          <a href="/aboutUs">About</a>
+        </li>
         <% if(user[0] != undefined){ %>
-          <li class="md:hidden cursor-default select-none li text-slate-500 font-bold ml-2"><%= user[0].userName %></li>
+        <li
+          class="hidden cursor-default select-none md:inline-block li text-slate-500 font-bold ml-2"
+        >
+          <%= user[0].userName %>
+        </li>
         <%}%>
-        <li class="li md:my-4 mx-6 transition-all duration-500 hover:bg-teal-100 hover:bg-opacity-40 md:hover:bg-white hover:text-teal-600 hover:translate-x-1 md:hover:-translate-y-1 md:hover:translate-x-0"><a href="/courses">Course List</a></li>
-        <li class="li md:my-4 mx-6 transition-all duration-500 hover:bg-teal-100 hover:bg-opacity-40 md:hover:bg-white hover:text-teal-600 hover:translate-x-1 md:hover:-translate-y-1 md:hover:translate-x-0"><a href="/contribute">Contribute</a></li>
-        <li class="li md:my-4 mx-6 transition-all duration-500 hover:bg-teal-100 hover:bg-opacity-40 md:hover:bg-white hover:text-teal-600 hover:translate-x-1 md:hover:-translate-y-1 md:hover:translate-x-0"><a href="/aboutUs">About</a></li>
-        <% if(user[0] != undefined){ %>
-          <li class="hidden cursor-default select-none md:inline-block li text-slate-500 font-bold ml-2"><%= user[0].userName %></li>
-        <%}%>
-        <div class="flex flex-col md:items-center w-full md:w-auto md:absolute md:overflow-hidden md:top-14 md:right-0 bg-white rounded-b-md nav-drop-down md:max-h-0 transition-[max-Height] duration-1000">
+        <div
+          class="flex flex-col md:items-center w-full md:w-auto md:absolute md:overflow-hidden md:top-14 md:right-0 bg-white rounded-b-md nav-drop-down md:max-h-0 transition-[max-Height] duration-1000"
+        >
           <% if(user[0] == undefined){ %>
-            
-            <li class="hover:bg-teal-100 hover:bg-opacity-40 hover:translate-x-1 li md:py-4 md:px-6 md:pr-24 transition-all duration-500 hover:text-teal-600"><a href="/users/signIn">Sign In</a></li>
-            <li class="hover:bg-teal-100 hover:bg-opacity-40 hover:translate-x-1 li md:py-4 md:px-6 md:pr-24 transition-all duration-500 hover:text-teal-600"><a href="/users/signUp">Sign Up</a></li>
-            <% } %>
-            <% if(user[0] != undefined){ %>
-              <!-- <li class="hover:bg-teal-100 hover:bg-opacity-40 hover:translate-x-1 li md:py-4 px-6 md:pr-24 transition-all duration-500 hover:text-teal-600">Hello <%= user[0].userName %></li> -->
-              <% if(user[0].dashboardAccess === true){ %>
-                <!-- <li class="hover:bg-teal-100 hover:bg-opacity-40 hover:translate-x-1 li md:py-4 px-6 md:pr-24 transition-all duration-500 hover:text-teal-600"><a href="/xlzjoorD6C">Dashboard</a></li> -->
-                <% } %>
-                <li class="hover:bg-teal-100 hover:bg-opacity-40 hover:translate-x-1 li md:py-4 px-6 md:pr-24 transition-all duration-500 hover:text-teal-600"><a href="/signingOut">Sign Out</a></li>
-                <% } %>
-              </div>
-                <img class="w-7 mx-6 ml-2 md:block hidden hover:-translate-y-1 active:translate-y-1 transition-transform duration-700 profileIcon" src="./icons/profileIcon.svg" alt="profileIcon">
+
+          <li
+            class="hover:bg-teal-100 hover:bg-opacity-40 hover:translate-x-1 li md:py-4 md:px-6 md:pr-24 transition-all duration-500 hover:text-teal-600"
+          >
+            <a href="/users/signIn">Sign In</a>
+          </li>
+          <li
+            class="hover:bg-teal-100 hover:bg-opacity-40 hover:translate-x-1 li md:py-4 md:px-6 md:pr-24 transition-all duration-500 hover:text-teal-600"
+          >
+            <a href="/users/signUp">Sign Up</a>
+          </li>
+          <% } %> <% if(user[0] != undefined){ %>
+          <!-- <li class="hover:bg-teal-100 hover:bg-opacity-40 hover:translate-x-1 li md:py-4 px-6 md:pr-24 transition-all duration-500 hover:text-teal-600">Hello <%= user[0].userName %></li> -->
+          <% if(user[0].dashboardAccess === true){ %>
+          <!-- <li class="hover:bg-teal-100 hover:bg-opacity-40 hover:translate-x-1 li md:py-4 px-6 md:pr-24 transition-all duration-500 hover:text-teal-600"><a href="/xlzjoorD6C">Dashboard</a></li> -->
+          <% } %>
+          <li
+            class="hover:bg-teal-100 hover:bg-opacity-40 hover:translate-x-1 li md:py-4 px-6 md:pr-24 transition-all duration-500 hover:text-teal-600"
+          >
+            <a href="/signingOut">Sign Out</a>
+          </li>
+          <% } %>
+        </div>
+        <img
+          class="w-7 mx-6 ml-2 md:block hidden hover:-translate-y-1 active:translate-y-1 transition-transform duration-700 profileIcon"
+          src="./icons/profileIcon.svg"
+          alt="profileIcon"
+        />
       </ul>
     </nav>
-<hr class="w-full h-1 bg-teal-400">
+    <hr class="w-full h-1 bg-teal-400" />
     <section class="bg-white sm:mx-16 my-16 h-screen rounded-lg">
       <h1
         class="text-3xl text-center sm:text-left text-white block font-bold p-4 bg-teal-400 rounded-t-lg"
@@ -54,7 +106,9 @@
         Dashboard
       </h1>
       <!-- Content  -->
-      <div class="flex flex-col 2xl:flex-row items-center jusitify-center bg-teal-100 h-screen px-10">
+      <div
+        class="flex flex-col 2xl:flex-row items-center jusitify-center bg-teal-100 h-screen px-10"
+      >
         <!-- Recent Contributions  -->
         <table
           class="text-sm lg:text-lg bg-white opacity-50 border-collapse shadow-lg m-4 w-full 2xl:w-2/3 rounded-md"
@@ -70,20 +124,36 @@
 
           <!-- table entery -->
           <% for(let i = 0; i < contributions.length; i++){ %>
-            
-            <tr class="transition-transform duration-200 hover:bg-teal-400 hover:bg-opacity-25 hover:translate-x-1">
-              <td class="pl-6 py-4"><%= contributions[i].name %></td>
-              <td class="pl-6 py-4"><a href="<%= contributions[i].pdf %>"><%= contributions[i].filename %></a></td>
-              <td class="pl-6 py-4"><%= contributions[i].course %></td>
-              <td class="pl-6 py-4"><%= contributions[i].category %></td>
-              <td class="pl-6 py-4 hidden lg:inline-block"><%= contributions[i].cloudinaryId %></td>
-              <td class="px-4">
-                <img class="w-7 approveButton" src="./icons/tickIcon.svg" alt="" />
-              </td>
-              <td class="px-4">
-                  <img class="w-7 deleteButton" src="./icons/trashIcon.svg" alt="delButton" />
-              </td>
-            </tr>
+
+          <tr
+            class="transition-transform duration-200 hover:bg-teal-400 hover:bg-opacity-25 hover:translate-x-1"
+          >
+            <td class="pl-6 py-4"><%= contributions[i].name %></td>
+            <td class="pl-6 py-4">
+              <a href="<%= contributions[i].pdf %>"
+                ><%= contributions[i].filename %></a
+              >
+            </td>
+            <td class="pl-6 py-4"><%= contributions[i].course %></td>
+            <td class="pl-6 py-4"><%= contributions[i].category %></td>
+            <td class="pl-6 py-4 hidden lg:inline-block">
+              <%= contributions[i].cloudinaryId %>
+            </td>
+            <td class="px-4">
+              <img
+                class="min-w-[20px] w-7 approveButton"
+                src="./icons/tickIcon.svg"
+                alt="tickBtn"
+              />
+            </td>
+            <td class="px-4">
+              <img
+                class="min-w-[20px] w-7 deleteButton"
+                src="./icons/trashIcon.svg"
+                alt="delButton"
+              />
+            </td>
+          </tr>
 
           <% } %>
         </table>
@@ -95,18 +165,35 @@
             Add New Course
           </h2>
           <form action="/addCourse" method="post">
-              <h3 class="text-slate-600 font-semibold">Course Title :</h3>
-              <input class="py-1 px-2" type="text" name="courseTitle" id="" placeholder="Course title">
-              <h3 class=" text-slate-600 font-semibold">Course Code :</h3>
-              <input class="px-2 py-1"type="text" name="courseCode" id="" placeholder="Course Code">
-              <button class="block mx-auto my-4 px-4 py-1 active:-translate-y-2 active:shadow-none shadow-lg hover:bg-teal-500 hover:text-white bg-white text-teal-500 border-2 border-teal-500">Submit</button>
+            <h3 class="text-slate-600 font-semibold">Course Title :</h3>
+            <input
+              class="py-1 px-2"
+              type="text"
+              name="courseTitle"
+              id=""
+              placeholder="Course title"
+            />
+            <h3 class="text-slate-600 font-semibold">Course Code :</h3>
+            <input
+              class="px-2 py-1"
+              type="text"
+              name="courseCode"
+              id=""
+              placeholder="Course Code"
+            />
+            <button
+              class="block mx-auto my-4 px-4 py-1 active:-translate-y-2 active:shadow-none shadow-lg hover:bg-teal-500 hover:text-white bg-white text-teal-500 border-2 border-teal-500"
+            >
+              Submit
+            </button>
           </form>
         </div>
       </div>
     </section>
 
-    <script src="/script.js"></script>
+    <script src="./script.js"></script>
     <script>
+      // Nav bar responsiveness script 
       let navDropDown=document.querySelector('.nav-drop-down')
       let profileIcon=document.querySelector('.profileIcon')
       profileIcon.addEventListener('click',()=>{
