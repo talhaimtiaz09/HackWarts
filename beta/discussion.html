@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <title>Discussion</title>
+
+</head>
+<body>
+    <div id="nav"></div>
+    <div class="bg-gray-100 py-6 px-32 pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="lg:text-center">
+            <h2 class="text-base text-emerald-600 font-semibold tracking-wide uppercase">Discussion Forum</h2>
+            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                Explore Student-Created Articles
+                <span class="block text-emerald-500">
+                    
+                    Unleash Your Knowledge!
+                </span> 
+            </p>
+          </div>
+      
+          <!-- Discussion cards container -->
+          <div class="mt-10 space-y-10">
+            <!-- Sample discussion card -->
+            <div class="bg-white rounded-lg shadow-lg">
+              <div class="px-4 py-5 sm:p-6">
+                <h3 class="text-lg leading-6 font-medium text-gray-900">Topic Title</h3>
+                <div class="mt-2 max-w-xl text-sm text-gray-500">
+                  <p>Topic description goes here</p>
+                </div>
+              </div>
+              <div class="px-4 py-4 sm:px-6">
+                <a href="#" class="text-base font-medium text-emerald-600 hover:text-emerald-500">Read more &rarr;</a>
+              </div>
+            </div>
+            <!-- End of sample discussion card -->
+          </div>
+        </div>
+      </div>
+    
+<script>
+    function generateDiscussionCards(data) {
+  const container = document.querySelector('.space-y-10');
+  container.innerHTML = ''; // Clear previous cards
+
+  data.forEach(discussion => {
+    const card = `
+      <div class="bg-white rounded-lg shadow-lg">
+        <div class="px-4 py-5 sm:p-6">
+          <h3 class="text-lg leading-6 font-medium text-gray-900">${discussion.title}</h3>
+          <div class="mt-2 max-w-xl text-sm text-gray-500">
+            <p>${discussion.description}</p>
+          </div>
+        </div>
+        <div class="px-4 py-4 sm:px-6">
+          <a href="${discussion.link}" class="text-base font-medium text-emerald-600 hover:text-emerald-500">Read more &rarr;</a>
+        </div>
+      </div>
+    `;
+    container.innerHTML += card;
+  });
+}
+
+const data = [
+  {
+    title: 'Machine Learning AI',
+    description: 
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero corrupti sapiente vitae id amet cumque maxime ab iste incidunt et." ,
+    link: 'discussionPost.html'
+  },
+  {
+    title: 'orem ipsum, dolor sit amet ',
+    description: 
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero corrupti sapiente vitae id amet cumque maxime ab iste incidunt et." ,
+    link: 'discussionPost.html'
+  },
+  {
+    title: 'Machorem ipsum, dolor sit amet ',
+    description: 
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero corrupti sapiente vitae id amet cumque maxime ab iste incidunt et." ,
+    link: 'discussionPost.html'
+  },
+  {
+    title: 'Leaorem ipsum, dolor sit amet ',
+    description: 
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero corrupti sapiente vitae id amet cumque maxime ab iste incidunt et." ,
+    link: 'discussionPost.html'
+  },
+
+];
+
+
+generateDiscussionCards(data);
+
+
+</script>
+
+<script src="nav.js"></script>
+
+</body>
+</html>

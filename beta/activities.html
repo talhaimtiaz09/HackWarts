@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Co-curricular Activities in University</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="">
+    <div id="nav"></div>
+    <div class="container mx-auto py-8 mt-20 ">
+      <h1 class="text-4xl mb-10 font-bold text-center text-emerald-600">
+        Upcoming Co-curricular Activities in University
+      </h1>
+      <div
+        id="activityContainer"
+        class="w-2/3 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      ></div>
+    </div>
+
+    <script src="nav.js"></script>
+    <script>
+
+const activities = [
+  {
+    title: "Yoga and Meditation Session",
+    description: "Join us for a relaxing session of yoga and meditation to destress and rejuvenate your mind and body.",
+    date: "April 12, 2023"
+  },
+  {
+    title: "Photography Workshop",
+    description: "Learn the art of photography and capture beautiful moments with our professional photographer.",
+    date: "April 13, 2023"
+  },
+  {
+    title: "Debate Competition",
+    description: "Participate in the debate competition and showcase your skills in critical thinking and public speaking.",
+    date: "April 14, 2023"
+  },
+  {
+    title: "Campus Cleanup Drive",
+    description: "Join us in keeping our campus clean and green by volunteering for our cleanup drive.",
+    date: "April 15, 2023"
+  },
+  {
+    title: "Film Screening",
+    description: "Come and watch a thought-provoking movie that will inspire and entertain you.",
+    date: "April 16, 2023"
+  },
+  {
+    title: "Coding Competition",
+    description: "Test your coding skills and compete with fellow students in our coding competition.",
+    date: "April 17, 2023"
+  },
+  {
+    title: "Cultural Night",
+    description: "Experience the diversity and richness of different cultures through music, dance, and art performances.",
+    date: "April 18, 2023"
+  },
+  {
+    title: "Creative Writing Workshop",
+    description: "Enhance your writing skills and explore your creativity with our writing workshop.",
+    date: "April 19, 2023"
+  },
+  {
+    title: "Basketball Tournament",
+    description: "Play basketball and compete with other teams in our annual basketball tournament.",
+    date: "April 20, 2023"
+  }
+];
+      const activityContainer = document.getElementById("activityContainer");
+      activities.forEach((obj,index)=>{
+        const activityCard = document.createElement("div");
+        activityCard.className =
+          "bg-white rounded-lg shadow-lg overflow-hidden hover:-translate-y-2 transition-transform";
+
+        const img = document.createElement("img");
+        img.src =  "activityImg/act"+index+".jpg";
+        // alert(img.src)
+        img.alt = "Activity Image";
+        img.className = "w-full h-36 object-cover";
+
+        const div = document.createElement("div");
+        div.className = "p-6";
+
+        const h2 = document.createElement("h2");
+        h2.className = "text-2xl font-bold mb-4 text-emerald-500";
+        h2.textContent = obj.title;
+        const p = document.createElement("p");
+        p.className = "text-gray-700 mb-4";
+        p.textContent = obj.description;
+
+        const innerDiv = document.createElement("div");
+        innerDiv.className = "flex justify-between items-center";
+
+        const span = document.createElement("span");
+        span.className = "text-sm text-gray-600";
+        span.textContent = obj.date;
+
+        const a = document.createElement("a");
+        a.href = "#";
+        a.className = "text-sm font-bold text-emerald-500 hover:text-blue-700";
+        a.textContent = "Learn More";
+
+        innerDiv.appendChild(span);
+        innerDiv.appendChild(a);
+        div.appendChild(h2);
+        div.appendChild(p);
+        div.appendChild(innerDiv);
+        activityCard.appendChild(img);
+        activityCard.appendChild(div);
+
+        activityContainer.appendChild(activityCard);
+        console.log("hello");
+      });
+    </script>
+  </body>
+</html>

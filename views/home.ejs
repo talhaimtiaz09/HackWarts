@@ -29,6 +29,7 @@
       <%}%>
       <li class="li md:my-4 mx-6 transition-all duration-500 hover:bg-teal-100 hover:bg-opacity-40 md:hover:bg-white hover:text-teal-600 hover:translate-x-1 md:hover:-translate-y-1 md:hover:translate-x-0"><a href="/courses">Course List</a></li>
       <li class="li md:my-4 mx-6 transition-all duration-500 hover:bg-teal-100 hover:bg-opacity-40 md:hover:bg-white hover:text-teal-600 hover:translate-x-1 md:hover:-translate-y-1 md:hover:translate-x-0"><a href="/contribute">Contribute</a></li>
+      <li class="li md:my-4 mx-6 transition-all duration-500 hover:bg-teal-100 hover:bg-opacity-40 md:hover:bg-white hover:text-teal-600 hover:translate-x-1 md:hover:-translate-y-1 md:hover:translate-x-0"><a href="/books">Books</a></li>
       <li class="li md:my-4 mx-6 transition-all duration-500 hover:bg-teal-100 hover:bg-opacity-40 md:hover:bg-white hover:text-teal-600 hover:translate-x-1 md:hover:-translate-y-1 md:hover:translate-x-0"><a href="/aboutUs">About</a></li>
       <% if(user[0] != undefined){ %>
         <li class="hidden cursor-default select-none md:inline-block li text-slate-500 font-bold ml-2"><%= user[0].userName %></li>
@@ -135,32 +136,38 @@
       <div
         class="flex sm:flex-row flex-col justify-center items-center text-center bg-gradient-to-b from-teal-100 to-emerald-100 p-10"
       >
+      <a href="http://127.0.0.1:5500/beta/discussion.html#">
         <div
           class="shadow-lg transition-transform ease-in-out duration-500 hover:-translate-y-4 bg-white rounded-md w-52 xl:w-80 p-8 m-4"
         >
           <img src="./icons/sticky-note.svg" alt="icon" class="mx-auto" />
           <h3 class="text-teal-600 font-bold sm:text-lg md:text-xl py-2 mt-4">
-            Quizzes
+            Articles
           </h3>
       
         </div>
+      </a>
+        <a href="http://127.0.0.1:5500/beta/activities.html">
         <div
           class="shadow-lg transition-transform ease-in-out duration-500 hover:-translate-y-4 bg-white rounded-md  w-52 xl:w-80 p-8 m-4"
         >
           <img src="./icons/poster.svg" alt="icon" class="mx-auto" />
           <h3 class="text-teal-600 font-bold sm:text-lg md:text-xl py-2 mt-4">
-            Mids&Finals
+            Activities
           </h3>
        
         </div>
+      </a>
+      <a href="http://127.0.0.1:5500/beta/schedule.html">
         <div
           class="shadow-lg transition-transform ease-in-out duration-500 hover:-translate-y-4 bg-white rounded-md w-52 xl:w-80 p-8 m-4"
         >
           <img src="./icons/file-folder.svg" alt="icon" class="mx-auto" />
           <h3 class="text-teal-600 font-bold sm:text-lg md:text-xl py-2 mt-4">
-            Assignments
+            Schedule
           </h3>
         </div>
+      </a>
       </div>
       <a href="/courses">
         <button
